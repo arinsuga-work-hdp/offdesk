@@ -228,6 +228,12 @@ Route::group(['middleware'=>'lang'],function ()
 }); //end route group 'middleware'=>'lang'
 
 
+Route::prefix('contact')->group(function() {
+    //Contact
+    Route::resource('contact', 'Contact\ContactController');
+
+});
+
 /** route prefix admin */
 Route::prefix('admin')->group(function () {
 

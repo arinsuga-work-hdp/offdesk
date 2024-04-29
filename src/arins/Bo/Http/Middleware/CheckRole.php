@@ -17,24 +17,18 @@ class CheckRole
     public function handle($request, Closure $next, ...$pRoles)
     {
 
-        //dd($pRoles);
+        if (\Arins\Facades\Roles::fullControl()) {
 
-        $userRoles = Auth::user()->roles;
+            return $next($request);
 
-        foreach ($pRoles as $role) {
-            
-            foreach ($userRoles as $item) {
-                
-                if ($role == $item->code) {
+        } //end if
 
-                    return $next($request);
 
-                } //end ifs
+        if (\Arins\Facades\Roles::only($pRoles)) {
 
-            } //end loop
+            return $next($request);
 
-        } //end loop
-
+        }
 
         abort(403, 'Unauthorized action.');
     }

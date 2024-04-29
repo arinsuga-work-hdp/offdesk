@@ -11,49 +11,14 @@ class DatabaseSeederInitial extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
 
-		// $this->call('UsersTableSeeder');
-        // factory(App\User::class, 5)->create();
+        // $this->call('DatabaseSeederInitialAuth');
+        // $this->call('DatabaseSeederInitialBasic');
+        // $this->call('DatabaseSeederInitialBasicHR');
+        // $this->call('DatabaseSeederInitialTask');
+        // $this->call('DatabaseSeederInitialMeetroom');
+        $this->call('DatabaseSeederInitialContact');
 
-        $this->call('UsersTableSeeder');
-        $this->call('AppsTableSeeder');
-        $this->call('AppUserTableSeeder');
-        $this->call('RolesTableSeeder');
-        $this->call('RoleUserTableSeeder');
-
-        $this->call('OrderstatusTableSeeder');
-        $this->call('RoomTableSeeder');
-                     
-        $this->call('ActivitytypeTableSeeder');
-        $this->call('ActivitysubtypeTableSeeder');
-        $this->call('ActivitystatusTableSeeder');
-
-        $this->call('TasktypeTableSeeder');
-        $this->call('Tasksubtype1TableSeeder');
-        $this->call('Tasksubtype2TableSeeder');
-
-        $this->call('EmpstatusTableSeeder');
-        $this->call('EmptypeTableSeeder');
-        $this->call('InactivetypeTableSeeder');
-        $this->call('JobTableSeeder');
-        $this->call('SuperiorTableSeeder');
-        $this->call('BranchTableSeeder');
-        $this->call('DeptTableSeeder');
-        $this->call('SubdeptTableSeeder');
-        $this->call('BizunitTableSeeder');
-        $this->call('LevelTableSeeder');
-        
-        $this->call('GenderTableSeeder');
-        $this->call('BloodtypeTableSeeder');
-        $this->call('ReligionTableSeeder');
-        $this->call('NationalityTableSeeder');
-        $this->call('EducationTableSeeder');
-        
-        // $this->call('ProducttypesTableSeeder');
-        // $this->call('ProductsTableSeeder');
-        // $this->call('EventsTableSeeder');
-        // $this->call('NewssTableSeeder');
 
    }
 }
