@@ -3,6 +3,7 @@
 namespace Arins\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 
 class FacadeServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,15 @@ class FacadeServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+        $this->app->singleton('roles', function($app) {
+
+                $user = Auth::user();
+                $userRoles = $user->roles;
+                $fullControl = $user->fullcontrol;
+                return new \Arins\Helpers\Roles\Roles($user, $userRoles, $fullControl);
+        });
+
         $this->app->singleton('response', function ($app) {
             return new \Arins\Helpers\Response\Response();
         });

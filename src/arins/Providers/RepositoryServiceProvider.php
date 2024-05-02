@@ -3,6 +3,7 @@
 namespace Arins\Providers;
 
 use Illuminate\Support\ServiceProvider;
+
 //Repositories
 use Arins\Repositories\BaseRepository;
 use Arins\A0\Repositories\A0\A0Repository;

@@ -8,6 +8,7 @@ class Roles implements RolesInterface
 {
     protected $result;
     protected $user;
+    protected $fullControl;
     protected $userRoles;
 
     /**
@@ -22,21 +23,17 @@ class Roles implements RolesInterface
      */
 
 
-    public function __construct($user, $userRoles)
+    public function __construct($user, $userRoles, $fullcontrol = false)
     {
         $this->user = $user;
+        $this->fullControl = $fullcontrol;
         $this->userRoles = $userRoles;
+
     }
 
     function fullControl()
     {
-
-        if ($this->user->fullcontrol)
-        {
-            return true;
-        }
-
-        return false;
+        return $this->user->fullcontrol;
     }
 
     function only($allowRoles)
