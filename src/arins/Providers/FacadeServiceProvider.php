@@ -20,6 +20,7 @@ class FacadeServiceProvider extends ServiceProvider
                 $user = Auth::user();
                 $userRoles = $user->roles;
                 $fullControl = $user->fullcontrol;
+
                 return new \Arins\Helpers\Roles\Roles($user, $userRoles, $fullControl);
         });
 

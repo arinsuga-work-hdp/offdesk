@@ -13,6 +13,10 @@
   @include('layouts.appbo-sidebar-meetroom')
   <!-- /.Sidebar Meetroom -->
 
+<!-- Sidebar Contact -->
+@include('layouts.appbo-sidebar-contact')
+<!-- /.Sidebar Contact -->
+
 
   <!-- Sidebar Meetroom -->
   @include('layouts.appbo-sidebar-sysadmin')

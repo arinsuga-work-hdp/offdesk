@@ -9,15 +9,29 @@
 </a>
 </li>
 
-<!-- Sidebar Meetroom -->
-@include('layouts.appbo-sidebar-meetroom')
-<!-- /.Sidebar Meetroom -->
-
-
 @if (\Arins\Facades\Roles::only(['sys-admin']))
 
-<!-- Sidebar Meetroom -->
-@include('layouts.appbo-sidebar-sysadmin')
-<!-- /.Sidebar Meetroom -->
+    <!-- Sidebar Meetroom -->
+    @include('layouts.appbo-sidebar-sysadmin')
+    <!-- /.Sidebar Meetroom -->
+
+@else
+
+    @if (\Arins\Facades\Roles::only(['mroom-admin']))
+
+        <!-- Sidebar Meetroom -->
+        @include('layouts.appbo-sidebar-meetroom')
+        <!-- /.Sidebar Meetroom -->
+
+    @endif
+
+
+    @if (\Arins\Facades\Roles::only(['adbook-admin']))
+
+        <!-- Sidebar Contact -->
+        @include('layouts.appbo-sidebar-contact')
+        <!-- /.Sidebar Contact -->
+
+    @endif
 
 @endif

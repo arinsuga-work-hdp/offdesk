@@ -24,10 +24,15 @@ use Arins\Facades\Timeline;
 
 class ContactController extends WebController
 {
+    use UpdateStatus, ValidateOrder;
+    use TransformField, FilterField;
+    //Add custom trait if you want to customize validation error message
+    use ValidationMessage;
 
-    public function __construct(RoomorderRepositoryInterface $parData,
-                                RoomRepositoryInterface $parRoom,
-                                OrderstatusRepositoryInterface $parOrderstatus)
+    protected $dataRoom;
+    protected $room_id;
+
+    public function __construct(RoomorderRepositoryInterface $parData)
     {
         if ($this->sViewName == null)
         {
@@ -36,19 +41,14 @@ class ContactController extends WebController
 
         parent::__construct();
 
+        $this->middleware('check.role:adbook-admin,adbook-viewer');
+
         $this->data = $parData;
 
         $this->dataModel = [
         ];
 
     } //end construction
-
-    //GET Request overrided method
-    public function index()
-    {
-
-        return dd('Contact - Index');
-    }
 
 
 }
