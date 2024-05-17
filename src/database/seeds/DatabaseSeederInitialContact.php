@@ -13,6 +13,7 @@ class DatabaseSeederInitialContact extends Seeder
     {
 
         $this->call('ContactRoleUserTableSeeder');
+        $this->call('ContactCityTableSeeder');
         $this->call('ContactContacttypeTableSeeder');
 
 
