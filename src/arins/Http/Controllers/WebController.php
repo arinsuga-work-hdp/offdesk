@@ -140,6 +140,8 @@ class WebController extends Controller
         $data['image'] = Filex::uploadOrCopyAndRemove('', $uploadTemp, $this->uploadDirectory, $upload, 'public', false);
         $data['created_by'] = $user->id;
         //save data
+        // return dd($data);
+
         if ($this->data->create($data)) {
 
             //return 0; //success

@@ -64,6 +64,13 @@
             <p>R.Arsitek</p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="{{ route('booksupport.index.today') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>R.Support</p>
+          </a>
+        </li>
         
       </ul>
     </li>

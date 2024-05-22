@@ -143,6 +143,21 @@ Route::group(['middleware'=>'lang'],function ()
     Route::get('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@cancel')->name('bookarsitek.cancel');
     Route::put('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@updateCancel')->name('bookarsitek.update.cancel');
 
+    //bookroom support
+    Route::resource('booksupport', 'Booksupport\BooksupportController');
+    Route::get('booksupport-index-today', 'Booksupport\BooksupportController@indexToday')->name('booksupport.index.today');
+    Route::get('booksupport-index-open', 'Booksupport\BooksupportController@indexOpen')->name('booksupport.index.open');
+    Route::get('booksupport-index-cancel', 'Booksupport\BooksupportController@indexCancel')->name('booksupport.index.cancel');
+    Route::get('booksupport-index-custom', 'Booksupport\BooksupportController@indexCustom')->name('booksupport.index.custom');
+    Route::post('booksupport-index-custom-post', 'Booksupport\BooksupportController@indexCustomPost')->name('booksupport.index.custom.post');
+
+    //bookroom status support
+    Route::get('booksupport/{approve}/approve', 'Booksupport\BooksupportController@approve')->name('booksupport.approve');
+    Route::put('booksupport/{approve}/approve', 'Booksupport\BooksupportController@updateApprove')->name('booksupport.update.approve');
+    Route::get('booksupport/{reject}/reject', 'Booksupport\BooksupportController@reject')->name('booksupport.reject');
+    Route::put('booksupport/{reject}/reject', 'Booksupport\BooksupportController@updateReject')->name('booksupport.update.reject');
+    Route::get('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@cancel')->name('booksupport.cancel');
+    Route::put('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@updateCancel')->name('booksupport.update.cancel');
 
     //Activity Support API
     Route::get('api-support-monthlybyyear/{year}', 'Activity\ActivityController@supportMonthlybyyear')->name('api.support.monthlybyyear');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Arins\Bo\Http\Controllers\Bookarsitek;
+namespace Arins\Bo\Http\Controllers\Booksupport;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ use Arins\Repositories\Roomorder\RoomorderRepositoryInterface;
 use Arins\Facades\Response;
 use Arins\Facades\Timeline;
 
-class BookarsitekController extends WebController
+class BooksupportController extends WebController
 {
     use UpdateStatus, ValidateOrder;
     use TransformField, FilterField;
@@ -38,8 +38,8 @@ class BookarsitekController extends WebController
     {
         if ($this->sViewName == null)
         {
-            $this->sViewName = 'bookarsitek';
-            $this->room_id = 6; //Arsitek
+            $this->sViewName = 'booksupport';
+            $this->room_id = 7; //Support
         } //end if
 
         parent::__construct();
@@ -89,7 +89,7 @@ class BookarsitekController extends WebController
 
 
 
-        $this->aResponseData['gotodetail'] = 'Bookarsitek';
+        $this->aResponseData['gotodetail'] = 'booksupport';
         return view($this->sViewRoot.'.index-today', $this->aResponseData);
     }
 
