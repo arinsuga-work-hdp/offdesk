@@ -127,6 +127,23 @@ Route::group(['middleware'=>'lang'],function ()
     Route::get('bookbulat/{cancel}/cancel', 'Bookbulat\BookbulatController@cancel')->name('bookbulat.cancel');
     Route::put('bookbulat/{cancel}/cancel', 'Bookbulat\BookbulatController@updateCancel')->name('bookbulat.update.cancel');
 
+    //bookroom arsitek
+    Route::resource('bookarsitek', 'Bookarsitek\BookarsitekController');
+    Route::get('bookarsitek-index-today', 'Bookarsitek\BookarsitekController@indexToday')->name('bookarsitek.index.today');
+    Route::get('bookarsitek-index-open', 'Bookarsitek\BookarsitekController@indexOpen')->name('bookarsitek.index.open');
+    Route::get('bookarsitek-index-cancel', 'Bookarsitek\BookarsitekController@indexCancel')->name('bookarsitek.index.cancel');
+    Route::get('bookarsitek-index-custom', 'Bookarsitek\BookarsitekController@indexCustom')->name('bookarsitek.index.custom');
+    Route::post('bookarsitek-index-custom-post', 'Bookarsitek\BookarsitekController@indexCustomPost')->name('bookarsitek.index.custom.post');
+
+    //bookroom status arsitek
+    Route::get('bookarsitek/{approve}/approve', 'Bookarsitek\BookarsitekController@approve')->name('bookarsitek.approve');
+    Route::put('bookarsitek/{approve}/approve', 'Bookarsitek\BookarsitekController@updateApprove')->name('bookarsitek.update.approve');
+    Route::get('bookarsitek/{reject}/reject', 'Bookarsitek\BookarsitekController@reject')->name('bookarsitek.reject');
+    Route::put('bookarsitek/{reject}/reject', 'Bookarsitek\BookarsitekController@updateReject')->name('bookarsitek.update.reject');
+    Route::get('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@cancel')->name('bookarsitek.cancel');
+    Route::put('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@updateCancel')->name('bookarsitek.update.cancel');
+
+
     //Activity Support API
     Route::get('api-support-monthlybyyear/{year}', 'Activity\ActivityController@supportMonthlybyyear')->name('api.support.monthlybyyear');
     Route::get('api-incident-bycategory-monthinyear/{year}/{month}', 'Activity\ActivityController@incidentBycategoryMonthinyear')->name('api.incident.bycategory.monthinyear');

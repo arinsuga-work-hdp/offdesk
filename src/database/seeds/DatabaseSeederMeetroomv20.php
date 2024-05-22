@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeederInitial extends Seeder
+class DatabaseSeederMeetroomv20 extends Seeder
 {
     /**
      * Seed the application's database.
@@ -12,8 +12,7 @@ class DatabaseSeederInitial extends Seeder
     public function run()
     {
 
-        //$this->call('DatabaseSeederMeetroomv10');
-        $this->call('DatabaseSeederMeetroomv20');
+        $this->call('RoomTableSeeder');
 
-   }
+    }
 }

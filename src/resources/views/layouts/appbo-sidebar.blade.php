@@ -57,6 +57,14 @@
             <p>R.Bulat</p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="{{ route('bookarsitek.index.today') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>R.Arsitek</p>
+          </a>
+        </li>
+        
       </ul>
     </li>
 
