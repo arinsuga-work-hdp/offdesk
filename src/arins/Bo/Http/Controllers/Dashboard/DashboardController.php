@@ -23,8 +23,11 @@ class DashboardController extends WebController
     protected $sViewRoot;
     protected $data;
     protected $validateFields;
-    protected $postmo_id, $founder_id, $interior_id, $rbulat_id, $faried_id;
-    protected $dataPostmo, $dataFounder, $dataInterior, $dataRbulat, $dataFaried;
+    protected $postmo_id, $founder_id, $interior_id, $rbulat_id;
+    protected $faried_id, $arsitek_id, $support_id, $andrawina_id;
+
+    protected $dataPostmo, $dataFounder, $dataInterior, $dataRbulat;
+    protected $dataFaried, $dataArsitek, $dataSupport, $dataAndrawina;
 
 
     /**
@@ -47,7 +50,12 @@ class DashboardController extends WebController
         $this->interior_id = 3;
         $this->rbulat_id = 4;
         $this->faried_id = 5;
-        
+        //tambahan
+        $this->arsitek_id = 6;
+        $this->support_id = 7;
+        $this->andrawina_id = 8;
+
+
         $this->dataModel = [
         ];
 
@@ -87,7 +95,11 @@ class DashboardController extends WebController
         $this->dataInterior = $this->data->byRoomWeekOrderByIdAndStartdt($this->interior_id);
         $this->dataRbulat = $this->data->byRoomWeekOrderByIdAndStartdt($this->rbulat_id);
         $this->dataFaried = $this->data->byRoomWeekOrderByIdAndStartdt($this->faried_id);
-        
+        //tambahan
+        $this->dataArsitek = $this->data->byRoomWeekOrderByIdAndStartdt($this->arsitek_id);
+        $this->dataSupport = $this->data->byRoomWeekOrderByIdAndStartdt($this->support_id);
+        $this->dataAndrawina = $this->data->byRoomWeekOrderByIdAndStartdt($this->andrawina_id);
+
 
         $this->aResponseData = [
             'viewModel' => $this->viewModel,
@@ -96,6 +108,9 @@ class DashboardController extends WebController
             'dataInterior' => $this->dataInterior,
             'dataRbulat' => $this->dataRbulat,
             'dataFaried' => $this->dataFaried,
+            'dataArsitek' => $this->dataArsitek,
+            'dataSupport' => $this->dataSupport,
+            'dataAndrawina' => $this->dataAndrawina,
         ];
         $this->insertDataModelToResponseData();
 

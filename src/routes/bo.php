@@ -127,6 +127,54 @@ Route::group(['middleware'=>'lang'],function ()
     Route::get('bookbulat/{cancel}/cancel', 'Bookbulat\BookbulatController@cancel')->name('bookbulat.cancel');
     Route::put('bookbulat/{cancel}/cancel', 'Bookbulat\BookbulatController@updateCancel')->name('bookbulat.update.cancel');
 
+    //bookroom arsitek
+    Route::resource('bookarsitek', 'Bookarsitek\BookarsitekController');
+    Route::get('bookarsitek-index-today', 'Bookarsitek\BookarsitekController@indexToday')->name('bookarsitek.index.today');
+    Route::get('bookarsitek-index-open', 'Bookarsitek\BookarsitekController@indexOpen')->name('bookarsitek.index.open');
+    Route::get('bookarsitek-index-cancel', 'Bookarsitek\BookarsitekController@indexCancel')->name('bookarsitek.index.cancel');
+    Route::get('bookarsitek-index-custom', 'Bookarsitek\BookarsitekController@indexCustom')->name('bookarsitek.index.custom');
+    Route::post('bookarsitek-index-custom-post', 'Bookarsitek\BookarsitekController@indexCustomPost')->name('bookarsitek.index.custom.post');
+
+    //bookroom status arsitek
+    Route::get('bookarsitek/{approve}/approve', 'Bookarsitek\BookarsitekController@approve')->name('bookarsitek.approve');
+    Route::put('bookarsitek/{approve}/approve', 'Bookarsitek\BookarsitekController@updateApprove')->name('bookarsitek.update.approve');
+    Route::get('bookarsitek/{reject}/reject', 'Bookarsitek\BookarsitekController@reject')->name('bookarsitek.reject');
+    Route::put('bookarsitek/{reject}/reject', 'Bookarsitek\BookarsitekController@updateReject')->name('bookarsitek.update.reject');
+    Route::get('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@cancel')->name('bookarsitek.cancel');
+    Route::put('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@updateCancel')->name('bookarsitek.update.cancel');
+
+    //bookroom support
+    Route::resource('booksupport', 'Booksupport\BooksupportController');
+    Route::get('booksupport-index-today', 'Booksupport\BooksupportController@indexToday')->name('booksupport.index.today');
+    Route::get('booksupport-index-open', 'Booksupport\BooksupportController@indexOpen')->name('booksupport.index.open');
+    Route::get('booksupport-index-cancel', 'Booksupport\BooksupportController@indexCancel')->name('booksupport.index.cancel');
+    Route::get('booksupport-index-custom', 'Booksupport\BooksupportController@indexCustom')->name('booksupport.index.custom');
+    Route::post('booksupport-index-custom-post', 'Booksupport\BooksupportController@indexCustomPost')->name('booksupport.index.custom.post');
+
+    //bookroom status support
+    Route::get('booksupport/{approve}/approve', 'Booksupport\BooksupportController@approve')->name('booksupport.approve');
+    Route::put('booksupport/{approve}/approve', 'Booksupport\BooksupportController@updateApprove')->name('booksupport.update.approve');
+    Route::get('booksupport/{reject}/reject', 'Booksupport\BooksupportController@reject')->name('booksupport.reject');
+    Route::put('booksupport/{reject}/reject', 'Booksupport\BooksupportController@updateReject')->name('booksupport.update.reject');
+    Route::get('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@cancel')->name('booksupport.cancel');
+    Route::put('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@updateCancel')->name('booksupport.update.cancel');
+
+    //bookroom andrawina
+    Route::resource('bookandrawina', 'Bookandrawina\BookandrawinaController');
+    Route::get('bookandrawina-index-today', 'Bookandrawina\BookandrawinaController@indexToday')->name('bookandrawina.index.today');
+    Route::get('bookandrawina-index-open', 'Bookandrawina\BookandrawinaController@indexOpen')->name('bookandrawina.index.open');
+    Route::get('bookandrawina-index-cancel', 'Bookandrawina\BookandrawinaController@indexCancel')->name('bookandrawina.index.cancel');
+    Route::get('bookandrawina-index-custom', 'Bookandrawina\BookandrawinaController@indexCustom')->name('bookandrawina.index.custom');
+    Route::post('bookandrawina-index-custom-post', 'Bookandrawina\BookandrawinaController@indexCustomPost')->name('bookandrawina.index.custom.post');
+
+    //bookroom status andrawina
+    Route::get('bookandrawina/{approve}/approve', 'Bookandrawina\BookandrawinaController@approve')->name('bookandrawina.approve');
+    Route::put('bookandrawina/{approve}/approve', 'Bookandrawina\BookandrawinaController@updateApprove')->name('bookandrawina.update.approve');
+    Route::get('bookandrawina/{reject}/reject', 'Bookandrawina\BookandrawinaController@reject')->name('bookandrawina.reject');
+    Route::put('bookandrawina/{reject}/reject', 'Bookandrawina\BookandrawinaController@updateReject')->name('bookandrawina.update.reject');
+    Route::get('bookandrawina/{cancel}/cancel', 'Bookandrawina\BookandrawinaController@cancel')->name('bookandrawina.cancel');
+    Route::put('bookandrawina/{cancel}/cancel', 'Bookandrawina\BookandrawinaController@updateCancel')->name('bookandrawina.update.cancel');
+
     //Activity Support API
     Route::get('api-support-monthlybyyear/{year}', 'Activity\ActivityController@supportMonthlybyyear')->name('api.support.monthlybyyear');
     Route::get('api-incident-bycategory-monthinyear/{year}/{month}', 'Activity\ActivityController@incidentBycategoryMonthinyear')->name('api.incident.bycategory.monthinyear');

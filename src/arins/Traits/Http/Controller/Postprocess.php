@@ -29,7 +29,6 @@ trait Postprocess
         // } //end if
         $data = $this->transformField($data);
 
-
         //create temporary uploaded image
         $uploadTemp = Filex::uploadTemp($upload, $imageTemp);
         $request->session()->flash('imageTemp', $uploadTemp);
