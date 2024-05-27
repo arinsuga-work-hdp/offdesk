@@ -159,6 +159,22 @@ Route::group(['middleware'=>'lang'],function ()
     Route::get('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@cancel')->name('booksupport.cancel');
     Route::put('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@updateCancel')->name('booksupport.update.cancel');
 
+    //bookroom andrawina
+    Route::resource('bookandrawina', 'Bookandrawina\BookandrawinaController');
+    Route::get('bookandrawina-index-today', 'Bookandrawina\BookandrawinaController@indexToday')->name('bookandrawina.index.today');
+    Route::get('bookandrawina-index-open', 'Bookandrawina\BookandrawinaController@indexOpen')->name('bookandrawina.index.open');
+    Route::get('bookandrawina-index-cancel', 'Bookandrawina\BookandrawinaController@indexCancel')->name('bookandrawina.index.cancel');
+    Route::get('bookandrawina-index-custom', 'Bookandrawina\BookandrawinaController@indexCustom')->name('bookandrawina.index.custom');
+    Route::post('bookandrawina-index-custom-post', 'Bookandrawina\BookandrawinaController@indexCustomPost')->name('bookandrawina.index.custom.post');
+
+    //bookroom status andrawina
+    Route::get('bookandrawina/{approve}/approve', 'Bookandrawina\BookandrawinaController@approve')->name('bookandrawina.approve');
+    Route::put('bookandrawina/{approve}/approve', 'Bookandrawina\BookandrawinaController@updateApprove')->name('bookandrawina.update.approve');
+    Route::get('bookandrawina/{reject}/reject', 'Bookandrawina\BookandrawinaController@reject')->name('bookandrawina.reject');
+    Route::put('bookandrawina/{reject}/reject', 'Bookandrawina\BookandrawinaController@updateReject')->name('bookandrawina.update.reject');
+    Route::get('bookandrawina/{cancel}/cancel', 'Bookandrawina\BookandrawinaController@cancel')->name('bookandrawina.cancel');
+    Route::put('bookandrawina/{cancel}/cancel', 'Bookandrawina\BookandrawinaController@updateCancel')->name('bookandrawina.update.cancel');
+
     //Activity Support API
     Route::get('api-support-monthlybyyear/{year}', 'Activity\ActivityController@supportMonthlybyyear')->name('api.support.monthlybyyear');
     Route::get('api-incident-bycategory-monthinyear/{year}/{month}', 'Activity\ActivityController@incidentBycategoryMonthinyear')->name('api.incident.bycategory.monthinyear');

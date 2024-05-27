@@ -94,7 +94,7 @@
 
         @if (isset($viewModel->data->datalist))
             <div style="margin-top: 10px;">
-                @include('bo.bookarsitek.index-custom-datalist')
+                @include('bo.bookroom.index-custom-datalist')
             </div>
         @endif
 

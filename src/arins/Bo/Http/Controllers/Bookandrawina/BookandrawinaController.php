@@ -1,6 +1,6 @@
 <?php
 
-namespace Arins\Bo\Http\Controllers\Booksupport;
+namespace Arins\Bo\Http\Controllers\Bookandrawina;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ use Arins\Repositories\Roomorder\RoomorderRepositoryInterface;
 use Arins\Facades\Response;
 use Arins\Facades\Timeline;
 
-class BooksupportController extends WebController
+class BookandrawinaController extends WebController
 {
     use UpdateStatus, ValidateOrder;
     use TransformField, FilterField;
@@ -38,8 +38,8 @@ class BooksupportController extends WebController
     {
         if ($this->sViewName == null)
         {
-            $this->sViewName = 'booksupport';
-            $this->room_id = 7; //Support
+            $this->sViewName = 'bookandrawina';
+            $this->room_id = 8; //Andrawina
         } //end if
 
         parent::__construct();
@@ -62,7 +62,7 @@ class BooksupportController extends WebController
         $this->viewModel->data = $this->data->byRoomOrderByIdDesc($this->room_id);
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
-        $this->aResponseData['gotodetail'] = 'booksupport';
+        $this->aResponseData['gotodetail'] = 'bookandrawina';
         return view($this->sViewRoot.'.index', $this->aResponseData);
     }
 
@@ -90,7 +90,7 @@ class BooksupportController extends WebController
 
 
 
-        $this->aResponseData['gotodetail'] = 'booksupport';
+        $this->aResponseData['gotodetail'] = 'bookandrawina';
         return view($this->sViewRoot.'.index-today', $this->aResponseData);
     }
 
@@ -102,7 +102,7 @@ class BooksupportController extends WebController
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
-        $this->aResponseData['gotodetail'] = 'booksupport';
+        $this->aResponseData['gotodetail'] = 'bookandrawina';
         return view($this->sViewRoot.'.index-open', $this->aResponseData);
     }
 
@@ -113,8 +113,7 @@ class BooksupportController extends WebController
         $this->viewModel->data = $this->data->byRoomStatusCancelOrderByIdAndStartdtDesc($this->room_id);
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
-
-        $this->aResponseData['gotodetail'] = 'booksupport';
+        $this->aResponseData['gotodetail'] = 'bookandrawina';
         return view($this->sViewRoot.'.index-cancel', $this->aResponseData);
     }
 
@@ -149,7 +148,7 @@ class BooksupportController extends WebController
         ];
         $this->insertDataModelToResponseData();
 
-        $this->aResponseData['gotodetail'] = 'booksupport';
+        $this->aResponseData['gotodetail'] = 'bookandrawina';
         return view($this->sViewRoot.'.index-custom', $this->aResponseData);
     }
 

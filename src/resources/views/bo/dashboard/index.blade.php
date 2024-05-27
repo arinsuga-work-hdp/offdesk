@@ -10,6 +10,8 @@
 
 @section('content')
 
+    <div class="root"></div>
+
     <div style="margin-top: 10px;">
 
             <div class="card">
