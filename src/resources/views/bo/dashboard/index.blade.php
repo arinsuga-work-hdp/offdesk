@@ -22,7 +22,7 @@
               </div>
               <div class="card-body" style="overflow-x: scroll !important;">
                     <div class="row">
-                        <a href="{{ route('bookbulat.create') }}">Booking Ruang Interior</a>
+                        <a href="{{ route('bookinterior.create') }}">Booking Ruang Interior</a>
                         <div class="col-md-12">@include('bo.dashboard.index-items-interior')</div>
                     </div>
               </div>
@@ -61,13 +61,34 @@
                         <div class="col-sm-12 col-md-6">
                           <div class="card">
                               <div class="card-body" style="overflow-x: scroll !important;">
-                                <a href="{{ route('bookpostmo.create') }}">Booking Ruang Bulat</a>
+                                <a href="{{ route('bookbulat.create') }}">Booking Ruang Bulat</a>
                                 @include('bo.dashboard.index-items-rbulat')
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <div class="card">
+                              <div class="card-body" style="overflow-x: scroll !important;">
+                                  <a href="{{ route('bookarsitek.create') }}">Booking Ruang Arsitek</a>
+                                  @include('bo.dashboard.index-items-arsitek')
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                          <div class="card">
+                              <div class="card-body" style="overflow-x: scroll !important;">
+                                <a href="{{ route('bookandrawina.create') }}">Booking Ruang Andrawina</a>
+                                @include('bo.dashboard.index-items-andrawina')
                               </div>
                           </div>
                         </div>
                         
                     </div>
+
               </div>
             </div>
             <!-- /.card -->
@@ -80,8 +101,23 @@
               </div>
               <div class="card-body" style="overflow-x: scroll !important;">
                     <div class="row">
-                        <a href="{{ route('bookbulat.create') }}">Booking Ruang Founder</a>
-                        <div class="col-md-12">@include('bo.dashboard.index-items-founder')</div>
+                        <div class="col-sm-12 col-md-6">
+                          <div class="card">
+                              <div class="card-body" style="overflow-x: scroll !important;">
+                                  <a href="{{ route('bookfounder.create') }}">Booking Ruang Founder</a>
+                                  @include('bo.dashboard.index-items-founder')
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                          <div class="card">
+                              <div class="card-body" style="overflow-x: scroll !important;">
+                                <a href="{{ route('booksupport.create') }}">Booking Ruang Support</a>
+                                @include('bo.dashboard.index-items-support')
+                              </div>
+                          </div>
+                        </div>
                     </div>
               </div>
             </div>
