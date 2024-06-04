@@ -62,6 +62,7 @@ class BookpostmoController extends WebController
         $this->viewModel->data = $this->data->byRoomOrderByIdDesc($this->room_id);
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
+        $this->aResponseData['gotodetail'] = 'bookpostmo';
         return view($this->sViewRoot.'.index', $this->aResponseData);
     }
 
@@ -101,6 +102,7 @@ class BookpostmoController extends WebController
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
+        $this->aResponseData['gotodetail'] = 'bookpostmo';
         return view($this->sViewRoot.'.index-open', $this->aResponseData);
     }
 
@@ -112,50 +114,43 @@ class BookpostmoController extends WebController
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
+        $this->aResponseData['gotodetail'] = 'bookpostmo';
         return view($this->sViewRoot.'.index-cancel', $this->aResponseData);
     }
 
-    //GET Request
-    // public function indexCustom()
-    // {
-    //     $this->viewModel = Response::viewModel();
-    //     $this->viewModel->data = json_decode(json_encode($this->data->getInputField()));
-    //     $this->viewModel->data->date = now();
-
-    //     $this->aResponseData = [
-    //         'viewModel' => $this->viewModel,
-    //         'new' => true,
-    //         'fieldEnabled' => true,
-    //     ];
-    //     $this->insertDataModelToResponseData();
-
-    //     return view($this->sViewRoot.'.index-custom', $this->aResponseData);
-    // }
-
     //POST Request
-    // public function indexCustomPost(Request $request)
-    // {
+    public function indexCustomPost(Request $request)
+    {
 
-    //     $data = $request->only($this->data->getFillable()); //get field input
+        $data = $request->only($this->data->getFillable()); //get field input
+        $this->viewModel = Response::viewModel();
+        $customData = $this->data->getInputField();
+        $customData['datalist'] = null;
+        $this->viewModel->data = json_decode(json_encode($customData));
 
-    //     //custom validation
+        //custom validation
+        $customError = 'Tanggal meeting harus diisi jika jam mulai dan selesai diisi';
+        $validInput = $this->validateCustomView($data);
 
-    //     $data = $this->transformFieldCreate($data);
-    //     $filter = $this->filters($data);
-    //     $this->viewModel = Response::viewModel();
-    //     $data = $this->data->getInputField();
-    //     $data['datalist'] = null;
-    //     $this->viewModel->data = json_decode(json_encode($data));
-    //     $this->viewModel->data->datalist = $this->data->byRoomCustom($this->room_id, $filter);
+        if ($validInput) {
+
+            $customError = null;
+            $data = $this->transformFieldCreate($data);
+            $filter = $this->filters($data);
+            $this->viewModel->data->datalist = $this->data->byRoomCustom($this->room_id, $filter);
+    
+        } //end if
         
-    //     $this->aResponseData = [
-    //         'viewModel' => $this->viewModel,
-    //         'new' => true,
-    //         'fieldEnabled' => true,
-    //     ];
-    //     $this->insertDataModelToResponseData();
+        $this->aResponseData = [
+            'viewModel' => $this->viewModel,
+            'new' => true,
+            'fieldEnabled' => true,
+            'customError' => $customError,
+        ];
+        $this->insertDataModelToResponseData();
 
-    //     return view($this->sViewRoot.'.index-custom', $this->aResponseData);
-    // }
+        $this->aResponseData['gotodetail'] = 'bookpostmo';
+        return view($this->sViewRoot.'.index-custom', $this->aResponseData);
+    }
 
 }

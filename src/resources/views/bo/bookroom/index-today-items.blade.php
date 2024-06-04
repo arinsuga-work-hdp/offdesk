@@ -29,7 +29,7 @@
 <table id="filter" style="width: 100%;" class="table table-hover-pointer table-head-fixed text-nowrap">
     <thead>
         <tr>
-            <th style="width: 1%;">No</th>
+            <th style="width: 1%;"></th>
             <th style="width: 5%;">Nama Pemesan</th>
             <th style="width: 5%;">Subject</th>
             <th style="width: 3%;">Tanggal</th>
@@ -41,8 +41,24 @@
     <tbody>
 
         @foreach ($viewModel->data as $key => $item)
-            <tr onclick="window.location.assign('{{ route($gotodetail . '.show', [$gotodetail => $item->id]) }}');">
-                <td>{{ $key+1 }}</td>
+            <tr>
+                <td>
+                    <nav class="navbar navbar-expand" style="padding: 0rem !important;">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a style="padding: 0 1rem 0 1rem !important;" class="nav-link" href="{{ route($gotodetail . '.show', [$gotodetail => $item->id]) }}">
+                                    <i class="fas fa-sm fa-magnifying-glass"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="print" style="padding: 0 !important;" class="nav-link">
+                                    <i class="fas fa-sm fa-print"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->subject }}</td>
 

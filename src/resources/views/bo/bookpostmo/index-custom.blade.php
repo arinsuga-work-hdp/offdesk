@@ -94,7 +94,7 @@
 
         @if (isset($viewModel->data->datalist))
             <div style="margin-top: 10px;">
-                @include('bo.bookpostmo.index-custom-datalist')
+                @include('bo.bookroom.index-custom-datalist')
             </div>
         @endif
 
@@ -104,6 +104,7 @@
 @section('js')
 
     @include('bo.bookpostmo._script')
+    @include('bo.bookroom._script_list')
 
 @endsection
 
