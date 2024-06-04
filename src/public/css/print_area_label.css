@@ -1,0 +1,58 @@
+﻿html, body {
+    font-size:10pt !important;
+    max-width: 11cm;
+    max-height: 8cm;
+}
+
+table.label {
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 10cm;
+    max-width: 10cm;
+}
+
+table.label tr.title{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.title, tr.title td{
+    font-size: 10pt !important;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+table.label tbody tr td{
+    padding: 5px 10px 5px 10px;
+    text-wrap: nowrap;
+}
+
+table.label tbody tr:first-child td{
+    padding: 10px;
+}
+
+table.label tbody tr.label-desc-first td {
+    padding-top: 20px;
+} 
+
+table.label tbody tr.label-desc td:first-child {
+    width: 4cm;
+    max-width: 4cm;
+} 
+
+table.label tbody tr.label-desc td:nth-child(2) {
+    width: 6cm;
+    max-width: 6cm;
+    overflow: hidden;
+} 
+
+table.label tbody tr:last-child td{
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.no-print button {
+
+    margin-top: 30px;
+}

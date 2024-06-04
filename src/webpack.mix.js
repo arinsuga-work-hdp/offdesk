@@ -37,9 +37,15 @@ mix.js('resources/js/admin.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .copyDirectory('resources/assets/img', 'public/img')
    .styles([
-    'resources/css/main.css'
+    'resources/css/main.css',
    ], 'public/css/main.css')
    .styles([
+      'resources/css/print_area.css',
+     ], 'public/css/print_area.css')
+     .styles([
+      'resources/css/print_area_label.css',
+     ], 'public/css/print_area_label.css')
+     .styles([
     'resources/plugins/chart/Chart.min.css',
     'resources/plugins/flatpickr/flatpickr.css',
     'resources/plugins/select2/select2.min.css',

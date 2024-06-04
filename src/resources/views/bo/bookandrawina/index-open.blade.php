@@ -68,7 +68,7 @@
 
 
         <div>
-            @include('bo.bookandrawina.data-list-items')
+            @include('bo.bookroom.index-list')
         </div>
 
 @endsection

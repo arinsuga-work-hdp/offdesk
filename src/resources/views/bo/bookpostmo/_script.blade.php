@@ -59,7 +59,6 @@ $(document).ready(function() {
         $('#btnSubmit').hide();
     }
 
-
     $('#exportXLS').click(function(){
         TableToExcel('filter', 'support_rpt');
     })

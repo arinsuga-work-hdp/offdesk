@@ -62,6 +62,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookfaried/{reject}/reject', 'Bookfaried\BookfariedController@updateReject')->name('bookfaried.update.reject');
     Route::get('bookfaried/{cancel}/cancel', 'Bookfaried\BookfariedController@cancel')->name('bookfaried.cancel');
     Route::put('bookfaried/{cancel}/cancel', 'Bookfaried\BookfariedController@updateCancel')->name('bookfaried.update.cancel');
+    Route::get('bookfaried/{print}/print', 'Bookfaried\BookfariedController@print')->name('bookfaried.print');
 
     //bookroom postmo
     Route::resource('bookpostmo', 'Bookpostmo\BookpostmoController');
@@ -78,6 +79,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookpostmo/{reject}/reject', 'Bookpostmo\BookpostmoController@updateReject')->name('bookpostmo.update.reject');
     Route::get('bookpostmo/{cancel}/cancel', 'Bookpostmo\BookpostmoController@cancel')->name('bookpostmo.cancel');
     Route::put('bookpostmo/{cancel}/cancel', 'Bookpostmo\BookpostmoController@updateCancel')->name('bookpostmo.update.cancel');
+    Route::get('bookpostmo/{print}/print', 'Bookpostmo\BookpostmoController@print')->name('bookpostmo.print');
     
     //bookroom founder
     Route::resource('bookfounder', 'Bookfounder\BookfounderController');
@@ -94,6 +96,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookfounder/{reject}/reject', 'Bookfounder\BookfounderController@updateReject')->name('bookfounder.update.reject');
     Route::get('bookfounder/{cancel}/cancel', 'Bookfounder\BookfounderController@cancel')->name('bookfounder.cancel');
     Route::put('bookfounder/{cancel}/cancel', 'Bookfounder\BookfounderController@updateCancel')->name('bookfounder.update.cancel');
+    Route::get('bookfounder/{print}/print', 'Bookfounder\BookfounderController@print')->name('bookfounder.print');
 
     //bookroom interior
     Route::resource('bookinterior', 'Bookinterior\BookinteriorController');
@@ -110,6 +113,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookinterior/{reject}/reject', 'Bookinterior\BookinteriorController@updateReject')->name('bookinterior.update.reject');
     Route::get('bookinterior/{cancel}/cancel', 'Bookinterior\BookinteriorController@cancel')->name('bookinterior.cancel');
     Route::put('bookinterior/{cancel}/cancel', 'Bookinterior\BookinteriorController@updateCancel')->name('bookinterior.update.cancel');
+    Route::get('bookinterior/{print}/print', 'Bookinterior\BookinteriorController@print')->name('bookinterior.print');
 
     //bookroom bulat
     Route::resource('bookbulat', 'Bookbulat\BookbulatController');
@@ -126,6 +130,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookbulat/{reject}/reject', 'Bookbulat\BookbulatController@updateReject')->name('bookbulat.update.reject');
     Route::get('bookbulat/{cancel}/cancel', 'Bookbulat\BookbulatController@cancel')->name('bookbulat.cancel');
     Route::put('bookbulat/{cancel}/cancel', 'Bookbulat\BookbulatController@updateCancel')->name('bookbulat.update.cancel');
+    Route::get('bookbulat/{print}/print', 'Bookbulat\BookbulatController@print')->name('bookbulat.print');
 
     //bookroom arsitek
     Route::resource('bookarsitek', 'Bookarsitek\BookarsitekController');
@@ -142,6 +147,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookarsitek/{reject}/reject', 'Bookarsitek\BookarsitekController@updateReject')->name('bookarsitek.update.reject');
     Route::get('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@cancel')->name('bookarsitek.cancel');
     Route::put('bookarsitek/{cancel}/cancel', 'Bookarsitek\BookarsitekController@updateCancel')->name('bookarsitek.update.cancel');
+    Route::get('bookarsitek/{print}/print', 'Bookarsitek\BookarsitekController@print')->name('bookarsitek.print');
 
     //bookroom support
     Route::resource('booksupport', 'Booksupport\BooksupportController');
@@ -158,6 +164,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('booksupport/{reject}/reject', 'Booksupport\BooksupportController@updateReject')->name('booksupport.update.reject');
     Route::get('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@cancel')->name('booksupport.cancel');
     Route::put('booksupport/{cancel}/cancel', 'Booksupport\BooksupportController@updateCancel')->name('booksupport.update.cancel');
+    Route::get('booksupport/{print}/print', 'Booksupport\BooksupportController@print')->name('booksupport.print');
 
     //bookroom andrawina
     Route::resource('bookandrawina', 'Bookandrawina\BookandrawinaController');
@@ -174,6 +181,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookandrawina/{reject}/reject', 'Bookandrawina\BookandrawinaController@updateReject')->name('bookandrawina.update.reject');
     Route::get('bookandrawina/{cancel}/cancel', 'Bookandrawina\BookandrawinaController@cancel')->name('bookandrawina.cancel');
     Route::put('bookandrawina/{cancel}/cancel', 'Bookandrawina\BookandrawinaController@updateCancel')->name('bookandrawina.update.cancel');
+    Route::get('bookandrawina/{print}/print', 'Bookandrawina\BookandrawinaController@print')->name('bookandrawina.print');
 
     //Activity Support API
     Route::get('api-support-monthlybyyear/{year}', 'Activity\ActivityController@supportMonthlybyyear')->name('api.support.monthlybyyear');

@@ -68,11 +68,13 @@
 
 
         <div>
-            @include('bo.bookroom.index-today-items')
+            @include('bo.bookroom.index-today-list')
         </div>
 
 @endsection
 
 @section('js')
 
+    @include('bo.bookroom._script_list')
+    
 @endsection

@@ -378,5 +378,27 @@ class Formater implements FormaterInterface
         }
     }
     
+    /**
+     * ======================================================
+     * 6. Nama Hari
+     * ====================================================== */
+    public function dayName($data, $localname=true)
+    {
+        if ( ($data != null) && ($data != ''))
+        {
+            $dayNumber = date('w', strtotime($data));
+
+            if ($localname){
+                return config('a1.date.isoindex.hari')[$dayNumber];
+            } else {
+                return config('a1.date.isoindex.day')[$dayNumber];
+            }
+
+        }
+        else
+        {
+            return '';
+        }
+    }
 
 }

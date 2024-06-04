@@ -84,7 +84,7 @@
                 @endif
 
                 <div style="display: flex; justify-content=center;">
-                    @include('bo.bookbulat.index-custom-fields')
+                    @include('bo.bookroom.index-custom-fields')
                 </div>
             </form>
 
@@ -93,7 +93,7 @@
 
         @if (isset($viewModel->data->datalist))
             <div style="margin-top: 10px;">
-                @include('bo.bookbulat.index-custom-datalist')
+                @include('bo.bookroom.index-custom-list')
             </div>
         @endif
 
@@ -103,6 +103,7 @@
 @section('js')
 
     @include('bo.bookbulat._script')
+    @include('bo.bookroom._script_list')
 
 @endsection
 

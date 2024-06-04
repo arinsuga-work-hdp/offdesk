@@ -14,6 +14,7 @@ use Arins\Bo\Http\Controllers\Bookroom\ValidateOrder;
 use Arins\Bo\Http\Controllers\Bookroom\TransformField;
 use Arins\Bo\Http\Controllers\Bookroom\FilterField;
 use Arins\Bo\Http\Controllers\Bookroom\ValidationMessage;
+use Arins\Bo\Http\Controllers\Bookroom\IndexType;
 
 use Arins\Repositories\Orderstatus\OrderstatusRepositoryInterface;
 use Arins\Repositories\Room\RoomRepositoryInterface;
@@ -26,6 +27,7 @@ class BookfounderController extends WebController
 {
     use UpdateStatus, ValidateOrder;
     use TransformField, FilterField;
+    use IndexType;
     //Add custom trait if you want to customize validation error message
     use ValidationMessage;
 
@@ -42,6 +44,10 @@ class BookfounderController extends WebController
             $this->room_id = 2; //Founder
         } //end if
 
+        if ($this->gotodetail == null) {
+            $this->gotoDetail = 'bookfounder';
+        }
+
         parent::__construct();
 
         $this->data = $parData;
@@ -54,63 +60,4 @@ class BookfounderController extends WebController
         ];
 
     } //end construction
-
-    //GET Request overrided method
-    public function index()
-    {
-        $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomOrderByIdDesc($this->room_id);
-        $this->aResponseData = ['viewModel' => $this->viewModel];
-
-        return view($this->sViewRoot.'.index', $this->aResponseData);
-    }
-
-    /** get */
-    public function indexToday()
-    {
-        $this->viewModel = Response::viewModel();
-        // $this->viewModel->data = $this->data->byRoomTodayOrderByIdAndStartdtDesc($this->room_id);
-        $this->viewModel->data = $this->data->byRoomTodayOrderByStartdt($this->room_id);
-
-        $this->aResponseData = ['viewModel' => $this->viewModel];
-
-        for ($i=0; $i < count($this->viewModel->data); $i++) { 
-            
-            $startdt = $this->viewModel->data[$i]['startdt'];
-            $enddt = $this->viewModel->data[$i]['enddt'];
-            $todayStartTime = Timeline::todayStartTime();
-            $progressStart = Timeline::progressStart($todayStartTime, $startdt);
-            $progressRun = Timeline::progressRun($startdt, $enddt);
-
-            $this->viewModel->data[$i]['progressStart'] = $progressStart;
-            $this->viewModel->data[$i]['progressRun'] = $progressRun;
-
-        } //end loop
-
-        $this->aResponseData['gotodetail'] = 'bookfounder';
-        return view($this->sViewRoot.'.index-today', $this->aResponseData);
-    }
-
-    /** get */
-    public function indexOpen()
-    {
-        $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomStatusOpenOrderByIdAndStartdtDesc($this->room_id);
-        $this->aResponseData = ['viewModel' => $this->viewModel];
-
-
-        return view($this->sViewRoot.'.index-open', $this->aResponseData);
-    }
-
-    /** get */
-    public function indexCancel()
-    {
-        $this->viewModel = Response::viewModel();
-        $this->viewModel->data = $this->data->byRoomStatusCancelOrderByIdAndStartdtDesc($this->room_id);
-        $this->aResponseData = ['viewModel' => $this->viewModel];
-
-
-        return view($this->sViewRoot.'.index-cancel', $this->aResponseData);
-    }
-
 }

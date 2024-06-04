@@ -57,4 +57,10 @@ interface FormaterInterface
     public function datetimeMonthshortDay($data, $js=false);
     public function datetimeAmpmMonthshortDay($data, $js=false);
     
+    /**
+     * ======================================================
+     * 6. Nama Hari
+     * ====================================================== */
+    public function dayName($data, $localname=true);
+
 }
