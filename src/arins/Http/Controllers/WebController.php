@@ -28,7 +28,7 @@ class WebController extends Controller
 
     protected $appConfig, $appMode;
     protected $viewModel, $dataModel, $dataField;
-    protected $sViewRoot, $sViewName;
+    protected $sViewRoot, $sViewName, $gotodetail;
     protected $redirectSuccessStore, $redirectSuccessUpdate, $redirectSuccessDestroy;
     protected $redirectFailStore, $redirectFailUpdate, $redirectFailDestroy;
     protected $aResponseData;
@@ -77,6 +77,7 @@ class WebController extends Controller
         $this->viewModel->data = $this->data->allOrderByIdDesc();
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index', $this->aResponseData);
     }
 
@@ -92,6 +93,20 @@ class WebController extends Controller
         ];
 
         return view($this->sViewRoot.'.show', $this->aResponseData);
+    }
+
+    //GET Request
+    public function print($id)
+    {
+        $this->viewModel = Response::viewModel();
+        $this->viewModel->data = $this->data->find($id);
+        $this->aResponseData = [
+            'viewModel' => $this->viewModel,
+            'new' => false,
+            'fieldEnabled' => false
+        ];
+
+        return view($this->sViewRoot.'.print', $this->aResponseData);
     }
 
     //GET Request

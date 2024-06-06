@@ -42,6 +42,10 @@ class BookpostmoController extends WebController
             $this->room_id = 1; //Postmo
         } //end if
 
+        if ($this->gotodetail == null) {
+            $this->gotoDetail = 'bookpostmo';
+        }
+
         parent::__construct();
 
         $this->data = $parData;
@@ -62,7 +66,7 @@ class BookpostmoController extends WebController
         $this->viewModel->data = $this->data->byRoomOrderByIdDesc($this->room_id);
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
-        $this->aResponseData['gotodetail'] = 'bookpostmo';
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index', $this->aResponseData);
     }
 
@@ -90,7 +94,7 @@ class BookpostmoController extends WebController
 
 
 
-        $this->aResponseData['gotodetail'] = 'bookpostmo';
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index-today', $this->aResponseData);
     }
 
@@ -102,7 +106,7 @@ class BookpostmoController extends WebController
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
-        $this->aResponseData['gotodetail'] = 'bookpostmo';
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index-open', $this->aResponseData);
     }
 
@@ -114,7 +118,7 @@ class BookpostmoController extends WebController
         $this->aResponseData = ['viewModel' => $this->viewModel];
 
 
-        $this->aResponseData['gotodetail'] = 'bookpostmo';
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index-cancel', $this->aResponseData);
     }
 
@@ -149,8 +153,7 @@ class BookpostmoController extends WebController
         ];
         $this->insertDataModelToResponseData();
 
-        $this->aResponseData['gotodetail'] = 'bookpostmo';
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index-custom', $this->aResponseData);
     }
-
 }

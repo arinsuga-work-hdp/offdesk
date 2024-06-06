@@ -25,7 +25,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="print" style="padding: 0 !important;" class="nav-link">
+                                <a id="print" style="padding: 0 !important;" class="nav-link" href="{{ route($gotodetail . '.print', [$gotodetail => $item->id]) }}">
                                     <i class="fas fa-sm fa-print"></i>
                                 </a>
                             </li>
