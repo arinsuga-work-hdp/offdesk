@@ -56,7 +56,6 @@
                                 </a>
                             </li>
                         </ul>
-
                     </nav>
                 </td>
                 <td>{{ $item->name }}</td>

@@ -15,7 +15,7 @@
     <tbody>
 
         @foreach ($viewModel->data->datalist as $item)
-            <tr onclick="window.location.assign('{{ route($gotodetail . '.show', [$gotodetail => $item->id]) }}');">
+            <tr>
                 <td>
                     <nav class="navbar navbar-expand" style="padding: 0rem !important;">
                         <ul class="navbar-nav">
@@ -25,12 +25,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="print" style="padding: 0 !important;" class="nav-link" href="{{ route($gotodetail . '.print', [$gotodetail => $item->id]) }}">
+                                <a onclick="event.preventDefault(); print('{{ route($gotodetail . '.print', [$gotodetail => $item->id]) }}');" style="padding: 0 !important;" class="nav-link">
                                     <i class="fas fa-sm fa-print"></i>
                                 </a>
                             </li>
                         </ul>
-
                     </nav>
                 </td>
                 <td>{{ $item->orderStatus->name }}</td>

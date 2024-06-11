@@ -12,11 +12,6 @@
     }
 
     $(document).ready(function() {
-
-        $('#print').click(function(){
-            event.preventDefault();
-        })
-
         
     });    
 </script>

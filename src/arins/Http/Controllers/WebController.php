@@ -363,6 +363,7 @@ class WebController extends Controller
         ];
         $this->insertDataModelToResponseData();
 
+        $this->aResponseData['gotodetail'] = $this->gotoDetail;
         return view($this->sViewRoot.'.index-custom', $this->aResponseData);
     }
 
