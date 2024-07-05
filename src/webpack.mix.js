@@ -43,6 +43,9 @@ mix.js('resources/js/admin.js', 'public/js')
       'resources/css/print_area.css',
      ], 'public/css/print_area.css')
      .styles([
+      'resources/css/print_area_label.css',
+     ], 'public/css/print_area_label.css')
+     .styles([
     'resources/plugins/chart/Chart.min.css',
     'resources/plugins/flatpickr/flatpickr.css',
     'resources/plugins/select2/select2.min.css',
