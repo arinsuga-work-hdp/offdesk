@@ -11,11 +11,13 @@
     <title>{{ config('a1.company.name', 'Demo') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css/css_reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/print_area.css') }}" rel="stylesheet">
     <link href="{{ asset('css/print_area_label.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome/css/fontawesome.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome/css/regular.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome/css/solid.css') }}" rel="stylesheet">
+
 </head>
 <body>
 

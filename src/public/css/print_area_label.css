@@ -22,16 +22,29 @@ table.label tr.title{
 
 table.label tbody tr td{
     padding: 5px 10px 5px 10px;
-    width: 5cm;
-}
-
-table.label tr.label-desc td{
-    padding: 20px 10px 0px 10px;
+    text-wrap: nowrap;
 }
 
 table.label tbody tr:first-child td{
     padding: 10px;
 }
+
+table.label tbody tr.label-desc-first td {
+    padding-top: 20px;
+} 
+
+table.label tbody tr.label-desc td:first-child {
+    width: 4cm;
+    max-width: 4cm;
+    background-color: red;
+} 
+
+table.label tbody tr.label-desc td:nth-child(2) {
+    width: 6cm;
+    max-width: 6cm;
+    background-color: yellow;
+    overflow: hidden;
+} 
 
 table.label tbody tr:last-child td{
     padding-bottom: 10px;

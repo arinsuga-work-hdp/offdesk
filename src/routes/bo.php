@@ -62,6 +62,7 @@ Route::group(['middleware'=>'lang'],function ()
     Route::put('bookfaried/{reject}/reject', 'Bookfaried\BookfariedController@updateReject')->name('bookfaried.update.reject');
     Route::get('bookfaried/{cancel}/cancel', 'Bookfaried\BookfariedController@cancel')->name('bookfaried.cancel');
     Route::put('bookfaried/{cancel}/cancel', 'Bookfaried\BookfariedController@updateCancel')->name('bookfaried.update.cancel');
+    Route::get('bookfaried/{print}/print', 'Bookfaried\BookfariedController@print')->name('bookfaried.print');
 
     //bookroom postmo
     Route::resource('bookpostmo', 'Bookpostmo\BookpostmoController');
