@@ -5,6 +5,7 @@ namespace Arins\Bo\Http\Controllers\Bookroom;
 use Illuminate\Http\Request;
 use Auth;
 use Arins\Facades\Response;
+use Arins\Facades\Timeline;
 
 trait IndexType
 {
