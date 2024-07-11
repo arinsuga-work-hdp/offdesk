@@ -68,11 +68,13 @@
 
 
         <div>
-            @include('bo.bookfaried.data-list-items')
+            @include('bo.bookroom.index-list')
         </div>
 
 @endsection
 
 @section('js')
+
+    @include('bo.bookroom._script_list')
 
 @endsection

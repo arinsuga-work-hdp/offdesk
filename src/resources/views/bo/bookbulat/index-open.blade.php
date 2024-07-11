@@ -75,4 +75,6 @@
 
 @section('js')
 
+    @include('bo.bookroom._script_list')
+
 @endsection

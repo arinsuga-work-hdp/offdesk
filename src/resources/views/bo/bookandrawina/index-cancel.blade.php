@@ -67,7 +67,7 @@
         </nav>
 
         <div>
-            @include('bo.bookroom.data-list-items')
+            @include('bo.bookroom.index-list')
         </div>
 
 @endsection
