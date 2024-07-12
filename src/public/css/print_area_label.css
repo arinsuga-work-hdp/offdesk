@@ -36,13 +36,11 @@ table.label tbody tr.label-desc-first td {
 table.label tbody tr.label-desc td:first-child {
     width: 4cm;
     max-width: 4cm;
-    background-color: red;
 } 
 
 table.label tbody tr.label-desc td:nth-child(2) {
     width: 6cm;
     max-width: 6cm;
-    background-color: yellow;
     overflow: hidden;
 } 
 

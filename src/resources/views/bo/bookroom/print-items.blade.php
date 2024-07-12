@@ -51,15 +51,15 @@
         </tr>
         <tr class="label-desc">
             <td>HARI, TANGGAL</td>
-            <td>: {{ str_repeat('.', 300) }}</td>
+            <td>: {{ \Arins\Facades\Formater::dayName($viewModel->data->meetingdt) }}, {{ \Arins\Facades\Formater::date($viewModel->data->meetingdt) }}</td>
         </tr>
         <tr class="label-desc">
             <td>JAM</td>
-            <td>: {{ str_repeat('.', 45) }}</td>
+            <td>: {{ \Arins\Facades\Formater::time($viewModel->data->startdt) }} s/d {{ \Arins\Facades\Formater::time($viewModel->data->enddt) }}</td>
         </tr>
         <tr class="label-desc">
             <td>PEMESAN</td>
-            <td>: {{ str_repeat('.', 45) }}</td>
+            <td>: {{ $viewModel->data->name }}</td>
         </tr>
 
     </tbody>
@@ -67,6 +67,6 @@
 
 <div class="no-print">
 
-    <button style="margin-left: 10px;" onClick="window.print();">Print Label</button>
+    <button style="margin-left: 10px;" onClick="window.print(); window.close();">Print Label</button>
 
 </div>
