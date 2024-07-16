@@ -1,11 +1,14 @@
 ﻿html, body {
     font-size:10pt !important;
+    max-width: 11cm;
+    max-height: 8cm;
 }
 
 table.label {
     margin-top: 5px;
     margin-left: 5px;
     width: 10cm;
+    max-width: 10cm;
 }
 
 table.label tr.title{
