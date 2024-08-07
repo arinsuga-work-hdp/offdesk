@@ -24,7 +24,7 @@ return [
     */
 
     'company' => [
-        'version' => '1.0 - Beta!',
+        'version' => '2.1.2',
         'name' => 'Office Hadiprana',
         'website' => 'https://office.hd-desk.com/',
         'address' => [

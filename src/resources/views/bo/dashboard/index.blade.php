@@ -69,16 +69,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                          <div class="card">
-                              <div class="card-body" style="overflow-x: scroll !important;">
-                                  <a href="{{ route('bookarsitek.create') }}">Booking Ruang Arsitek</a>
-                                  @include('bo.dashboard.index-items-arsitek')
-                              </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-12">
                           <div class="card">
                               <div class="card-body" style="overflow-x: scroll !important;">
                                 <a href="{{ route('bookandrawina.create') }}">Booking Ruang Andrawina</a>
@@ -101,20 +92,11 @@
               </div>
               <div class="card-body" style="overflow-x: scroll !important;">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-12">
                           <div class="card">
                               <div class="card-body" style="overflow-x: scroll !important;">
                                   <a href="{{ route('bookfounder.create') }}">Booking Ruang Founder</a>
                                   @include('bo.dashboard.index-items-founder')
-                              </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-6">
-                          <div class="card">
-                              <div class="card-body" style="overflow-x: scroll !important;">
-                                <a href="{{ route('booksupport.create') }}">Booking Ruang Support</a>
-                                @include('bo.dashboard.index-items-support')
                               </div>
                           </div>
                         </div>
